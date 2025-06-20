@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCB-SHS CSO Constitution & By-Laws</title>
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/global/header.css" />
+    <link rel="stylesheet" href="../css/constitution-and-bylaws/cbl-overview.css" />
+    <link rel="stylesheet" href="../css/constitution-and-bylaws/cbl-preamble.css" />
+    <link rel="stylesheet" href="../css/constitution-and-bylaws/cbl-articles.css" />
+    <link rel="stylesheet" href="../css/constitution-and-bylaws/cbl-simplified.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Dancing+Script:wght@700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Dancing+Script&family=Lora&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../images/CSO-Logo.png" type="image/png" />
+
+    <style>
+        :root {
+    /* Existing variables */
+    --crimson: #dc0000;
+    --gold: #ffc107;
+    --dark-bg: #121212;
+    --light-white: rgba(255, 255, 255, 0.85);
+    
+    /* New variables from inspiration */
+    --secondary-gold: rgba(255, 215, 0, 0.15);
+    --section-padding: clamp(3rem, 5vw, 5rem) 0;
+    
+    /* Transition timing */
+    --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--dark-bg);
+    color: white;
+    line-height: 1.6;
+}
+
+/* New base typography blending both styles */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    margin-top: 0;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: -0.015em;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    background: linear-gradient(to right, var(--gold), #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4rem;
+    height: 3px;
+    background: linear-gradient(90deg, var(--crimson), var(--gold));
+}
+
+.cbl-overview {
+    padding: var(--section-padding);
+    background: linear-gradient(145deg, 
+        rgba(0,0,0,0.95), 
+        color-mix(in oklab, rgba(40,0,0,0.7), var(--gold) 5%));
+    position: relative;
+    overflow: hidden;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.overview-card {
+    background: linear-gradient(
+        145deg,
+        rgba(30, 30, 30, 0.8),
+        color-mix(in oklab, rgba(30, 30, 30, 0.7), var(--gold) 2%)
+    );
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.4s var(--ease-smooth);
+    box-shadow: 
+        0 4px 30px rgba(179, 0, 0, 0.08),
+        0 7px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.overview-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 215, 0, 0.05) 0%,
+        transparent 70%
+    );
+    z-index: 0;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.overview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 8px 40px rgba(220, 0, 0, 0.2),
+        0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.overview-card:hover::before {
+    opacity: 0.9;
+}
+
+.preamble-section {
+    padding: var(--section-padding);
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1601662528567-526cd06f6582?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover fixed;
+    text-align: center;
+}
+
+.preamble-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, 
+        rgba(0,0,0,0.9), 
+        color-mix(in oklab, rgba(220,0,0,0.4), var(--gold) 5%));
+}
+
+.preamble-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.preamble-content blockquote {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.1rem, 1.25vw, 1.3rem);
+    line-height: 1.8;
+    border-left: 4px solid var(--gold);
+    padding: 2rem;
+    text-align: left;
+    position: relative;
+    background: rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 0 8px 8px 0;
+    transition: all 0.4s var(--ease-smooth);
+}
+
+.preamble-content blockquote:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(220, 0, 0, 0.2);
+}
+
+.articles-container {
+    background: linear-gradient(
+        145deg,
+        rgba(30, 30, 30, 0.8),
+        color-mix(in oklab, rgba(40, 0, 0, 0.6), var(--gold) 3%)
+    );
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 
+        0 4px 30px rgba(179, 0, 0, 0.1),
+        0 7px 20px rgba(0, 0, 0, 0.1);
+}
+
+.article-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(40, 0, 0, 0.3);
+}
+
+.tab-btn {
+    padding: 1.25rem 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    transition: all 0.4s var(--ease-smooth);
+}
+
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--crimson), var(--gold));
+    transform: scaleX(0);
+    transition: transform 0.4s var(--ease-smooth);
+}
+
+.tab-btn:hover {
+    color: white;
+    background: rgba(220, 0, 0, 0.2);
+}
+
+.tab-btn.active {
+    color: var(--gold);
+    background: rgba(220, 0, 0, 0.15);
+}
+
+.tab-btn.active::after {
+    transform: scaleX(1);
+}
+
+.article-content {
+    padding: 2.5rem;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: 
+        opacity 0.4s var(--ease-smooth),
+        height 0.4s var(--ease-smooth),
+        padding 0.4s var(--ease-smooth);
+}
+
+.article-content.active {
+    opacity: 1;
+    height: auto;
+    padding: 2.5rem;
+}
+
+/* Enhanced Details Component */
+.article-content details {
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.3s var(--ease-smooth);
+}
+
+.article-content details[open] {
+    background: rgba(220, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(220, 0, 0, 0.1);
+}
+
+.article-content summary {
+    padding: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.article-content summary::after {
+    content: '+';
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    color: var(--gold);
+    transition: all 0.3s var(--ease-smooth);
+}
+
+.article-content details[open] summary::after {
+    content: '-';
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.article-content p {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.timeline {
+    position: relative;
+    padding: 3rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom, 
+        var(--crimson), 
+        color-mix(in oklab, var(--gold), white 30%));
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s var(--ease-smooth);
+}
+
+.timeline-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-marker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color);
+    top: 1rem;
+    box-shadow: 
+        0 0 0 4px rgba(220, 0, 0, 0.2),
+        0 0 0 8px rgba(220, 0, 0, 0.1);
+}
+
+.timeline-content {
+    background: linear-gradient(
+        145deg,
+        rgba(30, 30, 30, 0.8),
+        rgba(40, 0, 0, 0.6)
+    );
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+        0 4px 30px rgba(179, 0, 0, 0.08),
+        0 7px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s var(--ease-smooth);
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 8px 40px rgba(220, 0, 0, 0.2),
+        0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER START -->
+<header>
+    <div class="header-container"> <!-- Changed from "container header-container" -->
+      <!-- Logo Group -->
+      <a href="index.html" class="logo"> <!-- Wrap logo in anchor tag -->
+        <img src="../images/CSO-Logo.png" alt="CSO Logo" width="65" height="65"> <!-- Matched height with CSS -->
+        <div class="logo-text">
+          <h1>Central Student Organization</h1>
+          <p>University of Cebu - Banilad Campus</p>
+        </div>
+      </a>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+        <div class="hamburger-icon"> <!-- Changed structure to match CSS -->
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      
+      <!-- Main Navigation -->
+      <nav id="main-nav"> <!-- Added ID for aria-controls -->
+        <ul>
+          <!-- Home -->
+          <li class="dropdown">
+            <a href="index.html" class="active" aria-current="page">Home</a> <!-- Added aria-current -->
+            <ul class="dropdown-menu">
+              <li><a href="index.html#home">Home Page</a></li>
+              <li><a href="index.html#welcome">Welcome Messages</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+              <li><a href="index.html#trivia">Trivia & Fun Facts</a></li>
+              <li><a href="index.html#websiteinfo">Website Info</a></li>
+              <li><a href="index.html#webdev">Message from Web Dev</a></li>
+            </ul>
+          </li>
+          
+          <!-- About Us -->
+          <li class="dropdown">
+            <a href="about-us.html">About Us</a>
+            <ul class="dropdown-menu">
+              <li><a href="about-us.html#introduction">Introduction</a></li>
+              <li><a href="about-us.html#vmgos">VMGOs</a></li>
+              <li><a href="about-us.html#officers">Officers</a></li>
+            </ul>
+          </li>
+          
+          <!-- Constitution -->
+          <li class="dropdown">
+            <a href="constitution.html">Constitution</a>
+            <ul class="dropdown-menu">
+              <li><a href="constitution.html#overview">Overview</a></li>
+              <li><a href="constitution.html#preamble">Preamble</a></li>
+              <li class="dropdown-submenu">
+                <a href="constitution.html#articles" aria-haspopup="true">Articles</a>
+                <ul class="submenu">
+                  <li><a href="constitution.html#article1">Art. I</a></li>
+                  <li><a href="constitution.html#article2">Art. II</a></li>
+                  <li><a href="constitution.html#article3">Art. III</a></li>
+                  <li><a href="constitution.html#article4">Art. IV</a></li>
+                  <li><a href="constitution.html#article5">Art. V</a></li>
+                  <li><a href="constitution.html#article6">Art. VI</a></li>
+                  <li><a href="constitution.html#article7">Art. VII</a></li>
+                  <li><a href="constitution.html#article8">Art. VIII</a></li>
+                  <li><a href="constitution.html#article9">Art. IX</a></li>
+                  <li><a href="constitution.html#article10">Art. X</a></li>
+                  <li><a href="constitution.html#article11">Art. XI</a></li>
+                  <li><a href="constitution.html#article12">Art. XI</a></li>
+                </ul>
+              </li>
+              <li><a href="constitution.html#simplifiedversion">Simplified Ver.</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact -->
+          <li class="dropdown">
+            <a href="contact-us.html">Contact</a>
+            <ul class="dropdown-menu">
+              <li><a href="contact-us.html#location">Location</a></li>
+              <li><a href="contact-us.html#socials">Socials</a></li>
+              <li><a href="contact-us.html#csodesk">CSO Desk</a></li>
+              <li><a href="contact-us.html#csomap">CSO Map</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+    <!-- Overview Section -->
+    <section class="cbl-overview">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; background: linear-gradient(to right, var(--gold), #ffffff); -webkit-background-clip: text; background-clip: text; color: transparent;">Constitution & By-Laws Overview</h2>
+            
+            <div class="overview-grid">
+                <div class="overview-card" style="--accent: var(--crimson); --icon: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z%22/%3E%3C/svg%3E');">
+                  <h3>Purpose</h3>
+                  <p>Governs student rights, leadership structure, and operations of UCB-SHS CSO. Establishes the framework for student representation and activities.</p>
+                </div>
+              
+                <div class="overview-card" style="--accent: var(--gold); --icon: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Ccircle cx=%2212%22 cy=%2212%22 r=%2210%22/%3E%3Cline x1=%2212%22 y1=%228%22 x2=%2212%22 y2=%2212%22/%3E%3Cline x1=%2212%22 y1=%2216%22 x2=%2212.01%22 y2=%2216%22/%3E%3C/svg%3E');">
+                  <h3>Scope</h3>
+                  <p>Covers membership, elections, finances, disciplinary actions, and amendments. Defines the roles of officers and student rights.</p>
+                </div>
+              
+                <div class="overview-card" style="--accent: #ffffff; --icon: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2%22/%3E%3Ccircle cx=%229%22 cy=%227%22 r=%224%22/%3E%3Cpath d=%22M23 21v-2a4 4 0 0 0-3-3.87%22/%3E%3Cpath d=%22M16 3.13a4 4 0 0 1 0 7.75%22/%3E%3C/svg%3E');">
+                  <h3>Core Values</h3>
+                  <p>I-CARE: Innovation, Camaraderie, Alignment, Respect, Excellence. Guides all organizational decisions and activities.</p>
+                </div>
+              </div>
+              
+        </div>
+    </section>
+    
+    <!-- Preamble Section -->
+    <section class="preamble-section">
+        <div class="container preamble-content">
+            <h2>Preamble</h2>
+            <blockquote>
+                <p>We, the Senior High students of the University of Cebu -- Banilad Campus, imploring the aid of the higher order, to establish a Central Student Organization that shall embody our ideas and aspirations to promote our general welfare, protect and preserve our rights and liberties, foster a harmonious relationship among ourselves, the different organizations of the University of Cebu -- Banilad Senior High students and the academic family, and instill in ourselves educational, social, cultural, physical, moral, spiritual and environmental growth and development, do hereby ordain and promulgate this Constitution and By-Laws.</p>
+            </blockquote>
+        </div>
+    </section>
+    
+    <!-- Articles Section -->
+    <!-- Articles Section -->
+<section class="articles-section">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; background: linear-gradient(to right, var(--gold), #ffffff); -webkit-background-clip: text; background-clip: text; color: transparent;">Articles & Sections</h2>
+        
+        <div class="articles-container">
+            <div class="article-tabs">
+                <button class="tab-btn active" onclick="openArticle('article1')">Article I: Name & Domicile</button>
+                <button class="tab-btn" onclick="openArticle('article2')">Article II: Objectives</button>
+                <button class="tab-btn" onclick="openArticle('article3')">Article III: Membership</button>
+                <button class="tab-btn" onclick="openArticle('article4')">Article IV: Bill of Rights</button>
+                <button class="tab-btn" onclick="openArticle('article5')">Article V: Structure</button>
+                <button class="tab-btn" onclick="openArticle('article6')">Article VI: Secretariats</button>
+                <button class="tab-btn" onclick="openArticle('article7')">Article VII: Elections</button>
+                <button class="tab-btn" onclick="openArticle('article8')">Article VIII: Discipline</button>
+                <button class="tab-btn" onclick="openArticle('article9')">Article IX: Finances</button>
+                <button class="tab-btn" onclick="openArticle('article10')">Article X: Meetings</button>
+                <button class="tab-btn" onclick="openArticle('article11')">Article XI: Advisers</button>
+                <button class="tab-btn" onclick="openArticle('article12')">Article XII: Amendments</button>
+            </div>
+            
+            <!-- Article I -->
+            <div class="article-content" id="article1" style="display: block;">
+                <details open>
+                    <summary>Section 1: Official Name</summary>
+                    <p>This organization shall be known as the UC -- Banilad Senior High School Central Student Organization; hereby referred to as the <strong>UCB-SHS CSO</strong>.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 2: Domicile</summary>
+                    <p>The UCB-SHS CSO shall have its conference room at room <strong>908</strong> located in the ninth floor of the Senior High School Building of the University of Cebu -- Banilad Campus.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 3: Official Seal</summary>
+                    <p>The UCB-SHS CSO shall maintain an official seal for use upon any or all official documents of the Board.</p>
+                </details>
+            </div>
+            
+            <!-- Article II -->
+            <div class="article-content" id="article2" style="display: none;">
+                <details open>
+                    <summary>Section 1: Vision</summary>
+                    <p>The UCB-SHS CSO envisions serving the communal interests of the Senior High students, teaching, and non-teaching staff by promoting cooperation and enhancing collaboration among students with different strands and tracks.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 2: Mission</summary>
+                    <p>To uphold and pursue the democratic aspirations of the students by serving as a catalyst for students to associate with the administration, as well as with the teaching and non-teaching faculty members in promoting the core values of the University.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 3: Objectives</summary>
+                    <p>Includes effective communication channels, accountability, service, representation, advocacy, engagement, outreach, leadership development, cultural diversity, academic support, and maintaining a positive attitude.</p>
+                </details>
+            </div>
+            
+            <!-- Article III -->
+            <div class="article-content" id="article3" style="display: none;">
+                <details open>
+                    <summary>Section 1: Members</summary>
+                    <p>All bonafide senior high students of the University of Cebu -- Banilad Campus who have paid the academic year membership fee shall become members of the UCB-SHS CSO represented by their respective tracks/strands student body organization presidents.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 2: Membership Fee</summary>
+                    <p>All members are required to pay the semestral membership fee of <strong>One Hundred Pesos (P100.00)</strong> which should be remitted during the first month of every semester.</p>
+                </details>
+            </div>
+            
+            <!-- Article IV -->
+            <div class="article-content" id="article4" style="display: none;">
+                <details open>
+                    <summary>Section 1: Student Rights</summary>
+                    <p>Students shall have the right to have their grievances heard, attend meetings, and access financial statements of UCB-SHS CSO.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 2: Right to Information</summary>
+                    <p>Students have the right to be informed and consulted regarding school policies which may directly or indirectly affect them.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 3: Right to Representation</summary>
+                    <p>Students shall have the right to be represented through the UCB-SHS CSO in the determination of school policies.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 4: Freedom of Expression</summary>
+                    <p>Students shall have the right to free expression of opinions and suggestions through the UCB-SHS CSO, provided it does not harm oneself or others.</p>
+                </details>
+            </div>
+            
+            <!-- Article V -->
+            <div class="article-content" id="article5" style="display: none;">
+                <details open>
+                    <summary>Section 1: Organizational Structure</summary>
+                    <p>The UCB-SHS CSO shall have an organization structure composed of Executives, Commission on Budgetary and Treasury, Partylist, and Secretariats.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 2: CENTRAL Board</summary>
+                    <p>The executive board members composed of executive officers, known as the CENTRAL Board of Executives (CENTRAL).</p>
+                </details>
+                
+                <details>
+                    <summary>Section 3-20: Officer Roles</summary>
+                    <p>Detailed rights, functions and obligations for:
+                        <ul>
+                            <li>President</li>
+                            <li>Vice Presidents (Internal/External)</li>
+                            <li>Secretary & Assistant Secretary</li>
+                            <li>Graphic Designer & Layout Artist</li>
+                            <li>Commission on Budget and Treasury</li>
+                            <li>Partylist Officers</li>
+                            <li>Grade Representatives</li>
+                        </ul>
+                    </p>
+                </details>
+            </div>
+            
+            <!-- Article VI -->
+            <div class="article-content" id="article6" style="display: none;">
+                <details open>
+                    <summary>Section 1: Definition</summary>
+                    <p>The Secretariats are classroom Mayors who represent every student in the Senior High School department.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 2: Composition</summary>
+                    <p>Composed of incumbent mayors from all strands/tracks. Term length is one semester, renewable upon reelection.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 3: Functions</summary>
+                    <p>Implement events, communicate concerns, represent classes, assist council, and provide feedback.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 4: Reelection Conditions</summary>
+                    <p>Reelection in 2nd semester only allowed for health reasons, transfers, violations, or adviser mandate.</p>
+                </details>
+            </div>
+            
+            <!-- Article VII -->
+            <div class="article-content" id="article7" style="display: none;">
+                <details open>
+                    <summary>Section 1: Election Calendar</summary>
+                    <p>Year-End Elections in May, with Oath-Taking and Turning-Over Ceremony. Vacancies filled at start of academic year.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 2-4: Election Process</summary>
+                    <p>Partylist registration with COMELEC, validation, and speech procedures. Grounds for dissolution.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 5-6: Ceremonies</summary>
+                    <p>Oath-Taking led by principal. Turning-Over includes awards, farewells, and planning sessions.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 7-10: Vacancies</summary>
+                    <p>Process for filling vacancies including applications, interviews, and special provisions for Grade 11/12 officers.</p>
+                </details>
+            </div>
+            
+            <!-- Article VIII -->
+            <div class="article-content" id="article8" style="display: none;">
+                <details open>
+                    <summary>Section 1: Accountability</summary>
+                    <p>Officers shall serve with responsibility, integrity, loyalty and efficiency.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 2: Grounds for Removal</summary>
+                    <p>Includes violations of school policies, misconduct, dishonor, habitual absences, or other grounds determined by Board.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 3-6: Disciplinary Process</summary>
+                    <p>Show Cause Order → Notice of Suspension/Removal → Due Process (2/3 vote) → Letter of Suspension/Removal.</p>
+                </details>
+            </div>
+            
+            <!-- Article IX -->
+            <div class="article-content" id="article9" style="display: none;">
+                <details open>
+                    <summary>Section 1: General Funds</summary>
+                    <p>Sources include membership fees, proceeds from interests/fundraisers, donations, administration funds, fines, and other contributions.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 2: Special Funds</summary>
+                    <p>For specific purposes approved by CENTRAL Board. Unused amounts revert to general funds.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 3-4: Fund Management</summary>
+                    <p>Collection, keeping, disbursement and expenditure procedures with proper accounting/auditing.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 5-6: Transparency</summary>
+                    <p>Right to access financial statements. Bank signatories: President, CBT Chairperson, and two Advisers.</p>
+                </details>
+            </div>
+            
+            <!-- Article X -->
+            <div class="article-content" id="article10" style="display: none;">
+                <details open>
+                    <summary>Section 1: Regular Sessions</summary>
+                    <p>Twice monthly at agreed time/place.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 2: Special Sessions</summary>
+                    <p>Called by President or 1/3 of officers with 2-day notice (unless emergency).</p>
+                </details>
+                
+                <details>
+                    <summary>Section 3: Local Sessions</summary>
+                    <p>Called by CBT Chairperson or President to discuss urgent matters with Secretariats.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 4: Proxy</summary>
+                    <p>Absent members may send representatives with voting power if excused in advance.</p>
+                </details>
+            </div>
+            
+            <!-- Article XI -->
+            <div class="article-content" id="article11" style="display: none;">
+                <details open>
+                    <summary>Section 1: Purpose</summary>
+                    <p>Ensure actions comply with rules/regulations of UCB-SHS CSO, University, DepEd, and laws.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 2-3: Qualifications</summary>
+                    <p>Faculty/non-teaching employees with integrity. Board may define additional qualifications/disqualifications.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 4-5: Selection & Term</summary>
+                    <p>Nominated by Board/principal → CENTRAL deliberation → President selection with majority vote. Term lasts with CENTRAL confidence.</p>
+                </details>
+            </div>
+            
+            <!-- Article XII -->
+            <div class="article-content" id="article12" style="display: none;">
+                <details open>
+                    <summary>Section 1-2: Dissolution</summary>
+                    <p>Independent entity unless suspended/closed by official memorandum or 2/3 faculty vote. Right to appeal process.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 3-4: COMELEC</summary>
+                    <p>Composed of 2 advisers + 8 appointees. Handles candidate validation, election rules, results, and protests.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 5-7: Amendments</summary>
+                    <p>Requires 2/3 vote. Revision process involves Drafting, Revision, and Executive committees with adviser supervision.</p>
+                </details>
+                
+                <details>
+                    <summary>Section 8-9: Health Crisis</summary>
+                    <p>Adapt to pandemics through virtual services, information dissemination, and financial aid.</p>
+                </details>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Simplified CBL Section -->
+    <section class="simplified-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; background: linear-gradient(to right, var(--gold), #ffffff); -webkit-background-clip: text; background-clip: text; color: transparent;">Simplified By-Laws</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item" style="--color: var(--crimson);">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Elections</h4>
+                        <p>Held yearly; partylists must register with COMELEC. Officers serve for one academic year.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" style="--color: var(--gold);">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Membership</h4>
+                        <p>All SHS students who pay ₱100/semester fee are members. Represented by strand presidents.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" style="--color: #ffffff;">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Officer Roles</h4>
+                        <p>President leads, VP Internal handles student affairs, VP External manages external relations, Secretary maintains records.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" style="--color: var(--crimson);">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Finances</h4>
+                        <p>Funds come from membership fees, donations, and fundraisers. Budget must be approved by CENTRAL Board.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" style="--color: var(--gold);">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Meetings</h4>
+                        <p>Regular sessions twice monthly. Special sessions can be called by President or 1/3 of officers.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" style="--color: #ffffff;">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Discipline</h4>
+                        <p>Officers can be removed for misconduct, absenteeism, or violations. Requires 2/3 vote.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+// Enhanced Tab System with Smooth Transitions
+function openArticle(articleId, event) {
+    // Hide all article contents
+    const contents = document.querySelectorAll('.article-content');
+    contents.forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Update active tab
+    const tabs = document.querySelectorAll('.tab-btn');
+    tabs.forEach(tab => {
+        tab.classList.remove('active');
+    });
+    event.currentTarget.classList.add('active');
+    
+    // Show selected article
+    const activeContent = document.getElementById(articleId);
+    activeContent.classList.add('active');
+    
+    // Scroll to article
+    setTimeout(() => {
+        activeContent.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start',
+            inline: 'nearest'
+        });
+    }, 400);
+}
+
+// Enhanced Intersection Observer
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    // Observe all animatable elements
+    document.querySelectorAll(
+        '.overview-card, .timeline-item, .preamble-content blockquote'
+    ).forEach(el => {
+        observer.observe(el);
+    });
+    
+    // Initialize first article as active
+    document.querySelector('.tab-btn').click();
+});
+
+// Add hover effect class to cards
+document.querySelectorAll('.overview-card, .timeline-content').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.classList.add('hover-active');
+    });
+    card.addEventListener('mouseleave', () => {
+        card.classList.remove('hover-active');
+    });
+});
+    </script>
+
+    <script src="../js/header.js"></script>
+</body>
+</html>
