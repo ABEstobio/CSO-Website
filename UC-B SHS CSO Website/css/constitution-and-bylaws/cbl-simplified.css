@@ -1,0 +1,121 @@
+/* ======================
+           SIMPLIFIED CBL SECTION 
+           ====================== */
+           .simplified-section {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(40,0,0,0.7));
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--crimson), var(--gold));
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 1.5rem;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+            padding-right: 3rem;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+            padding-left: 3rem;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--color);
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 0 4px rgba(220, 0, 0, 0.2), 0 0 0 8px rgba(220, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-marker {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-marker {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(220, 0, 0, 0.3);
+        }
+        
+        .timeline-content h4 {
+            color: var(--color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ======================
+           ANIMATIONS 
+           ====================== */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(220, 0, 0, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(220, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 0, 0, 0); }
+        }
+        
+        /* ======================
+           RESPONSIVE DESIGN 
+           ====================== */
+        @media (max-width: 768px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-marker,
+            .timeline-item:nth-child(even) .timeline-marker {
+                left: 19px;
+            }
+        }
